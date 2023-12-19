@@ -4,19 +4,18 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
 {
     public class CardTypeValidationResult
     {
-        public bool IsValid => _startsWithRightNumbers && _isRightLength;
+        public bool IsValid => StartsWithRightNumbers && IsRightLength;
 
         public ICardTypeValidationError Error { get; private set; }
 
-        private bool _startsWithRightNumbers { get; set; }
+        public bool StartsWithRightNumbers { get; set; }
 
-        private bool _isRightLength { get; set; }
-
+        public bool IsRightLength { get; set; }
 
         public CardTypeValidationResult(bool startsWithRightNumbers, bool isRightLength, ICardTypeValidationError error = null)
         {
-            _startsWithRightNumbers = startsWithRightNumbers;
-            _isRightLength = isRightLength;
+            StartsWithRightNumbers = startsWithRightNumbers;
+            IsRightLength = isRightLength;
             Error = error;
         }
     }

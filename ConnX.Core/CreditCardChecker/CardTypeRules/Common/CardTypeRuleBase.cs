@@ -52,15 +52,7 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
                     error: new CardTypeLengthError(CardType));
             }
 
-            if (!ValidLength.Contains(CreditCard.Number.Length))
-            {
-                return new CardTypeValidationResult(
-                    startsWithRightNumbers: false,
-                    isRightLength: false,
-                    error: new CardTypeLengthError(CardType));
-            }
-
-            if(!long.TryParse(CreditCard.Number, out _))
+            if (!long.TryParse(CreditCard.Number, out _))
             {
                 return new CardTypeValidationResult(
                     startsWithRightNumbers: false,
@@ -76,6 +68,14 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
                     startsWithRightNumbers: false,
                     isRightLength: false,
                     error: new CardTypeStartsWithError(CardType));
+            }
+
+            if (!ValidLength.Contains(CreditCard.Number.Length))
+            {
+                return new CardTypeValidationResult(
+                    startsWithRightNumbers: false,
+                    isRightLength: false,
+                    error: new CardTypeLengthError(CardType));
             }
             return new CardTypeValidationResult(
                 startsWithRightNumbers: true,

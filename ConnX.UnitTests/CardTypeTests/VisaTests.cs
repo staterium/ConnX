@@ -97,10 +97,10 @@
         }
 
         [Theory]
-        [InlineData("")]
-        [InlineData(null)]
-        [InlineData("6846846851")]
-        public void CardNumber_ThatDoesNotStartWith4AndIsNot13To16CharactersLong_IsInValid(string number)
+        [InlineData("", typeof(CardTypeLengthError))]
+        [InlineData(null, typeof(CardTypeLengthError))]
+        [InlineData("6846846851", typeof(CardTypeStartsWithError))]
+        public void CardNumber_ThatDoesNotStartWith4AndIsNot13To16CharactersLong_IsInValid(string number, Type errorType)
         {
             //arrange
             var creditCard = new CreditCard(number);
@@ -111,7 +111,7 @@
 
             //assert
             result.IsValid.ShouldBeFalse();
-            result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
+            result.Error.ShouldBeAssignableTo(errorType);
         }
 
         [Fact]

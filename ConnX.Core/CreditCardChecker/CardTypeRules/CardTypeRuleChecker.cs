@@ -20,6 +20,7 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules
             var result = new GenericValidationResult
             {
                 IsValid = false,
+                CardType = "Unknown",
                 ErrorMessage = "Unknown Card Type"
             };
 
@@ -27,12 +28,12 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules
             {
                 var typeCheckResult = rule.Check();
 
-                if(!typeCheckResult.IsValid)
+                if(typeCheckResult.IsValid)
                 {
                     return new GenericValidationResult
                     {
-                        IsValid = typeCheckResult.IsValid,
-                        ErrorMessage = typeCheckResult.Error.ErrorMessage
+                        IsValid = true,
+                        CardType = rule.CardType
                     };
                 }                
             }

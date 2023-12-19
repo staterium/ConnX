@@ -11,7 +11,7 @@
         [InlineData("5105105105105100", true)]
         [InlineData("5105105105105106", false)]
         [InlineData("9111111111111111", false)]
-        public void LuhnRule_ShouldReturns_ExpectedResult(string cardNumber, bool expectedResult)
+        public void LuhnRule_ShouldReturn_ExpectedResult(string cardNumber, bool expectedResult)
         {
             // Arrange
             var creditCard = new CreditCard(cardNumber);

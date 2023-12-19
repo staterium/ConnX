@@ -4,7 +4,9 @@
     {
         public bool IsValid { get; set; }
 
-        public string ErrorMessage { get; set; }
+        public string? CardType { get; set; }
+
+        public string? ErrorMessage { get; set; }
 
     }
 }

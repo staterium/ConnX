@@ -1,4 +1,5 @@
 global using ConnX.Core.Common;
+global using ConnX.Core.CreditCardChecker;
 global using ConnX.Core.CreditCardChecker.AlgorithmicRules.Algorithms;
 global using ConnX.Core.CreditCardChecker.CardTypeRules.CardTypes;
 global using ConnX.Core.CreditCardChecker.CardTypeRules.Errors;
