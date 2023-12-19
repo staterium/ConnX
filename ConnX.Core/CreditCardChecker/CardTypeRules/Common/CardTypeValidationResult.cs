@@ -11,7 +11,7 @@
         private bool _isRightLength { get; set; }
 
 
-        public CardTypeValidationResult(bool startsWithRightNumbers, bool isRightLength, ICardTypeValidationError error)
+        public CardTypeValidationResult(bool startsWithRightNumbers, bool isRightLength, ICardTypeValidationError error = null)
         {
             _startsWithRightNumbers = startsWithRightNumbers;
             _isRightLength = isRightLength;
