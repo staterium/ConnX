@@ -60,6 +60,14 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
                     error: new CardTypeLengthError(CardType));
             }
 
+            if(!long.TryParse(CreditCard.Number, out _))
+            {
+                return new CardTypeValidationResult(
+                    startsWithRightNumbers: false,
+                    isRightLength: false,
+                    error: new CardTypeFormatError(CardType));
+            }
+
             var startsWithLength = ValidStartsWith.First().ToString().Length;
 
             if (!ValidStartsWith.Contains(int.Parse(CreditCard.Number[0..startsWithLength])))
