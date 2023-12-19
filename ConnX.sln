@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnX.Core", "ConnX.Core\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnX.UnitTests", "ConnX.UnitTests\ConnX.UnitTests.csproj", "{20560D4F-F507-479F-9602-C41241DD783B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnX.API", "ConnX.API\ConnX.API.csproj", "{2386578F-90A0-41F4-A0C7-F79DA72A972F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{20560D4F-F507-479F-9602-C41241DD783B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20560D4F-F507-479F-9602-C41241DD783B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20560D4F-F507-479F-9602-C41241DD783B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2386578F-90A0-41F4-A0C7-F79DA72A972F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2386578F-90A0-41F4-A0C7-F79DA72A972F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2386578F-90A0-41F4-A0C7-F79DA72A972F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2386578F-90A0-41F4-A0C7-F79DA72A972F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
