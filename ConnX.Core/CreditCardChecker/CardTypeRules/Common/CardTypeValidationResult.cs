@@ -1,4 +1,6 @@
-﻿namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
+﻿using ConnX.Core.CreditCardChecker.CardTypeRules.Errors;
+
+namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
 {
     public class CardTypeValidationResult
     {

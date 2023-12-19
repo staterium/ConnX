@@ -1,4 +1,5 @@
 ﻿using ConnX.Core.Common;
+using ConnX.Core.CreditCardChecker.CardTypeRules.Errors;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
 {

@@ -1,10 +1,10 @@
-﻿namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
+﻿namespace ConnX.Core.CreditCardChecker.CardTypeRules.Errors
 {
     public class CardTypeLengthError : ICardTypeValidationError
     {
         public string ErrorMessage { get; }
 
-        public CardTypeLengthError(string cardType) 
+        public CardTypeLengthError(string cardType)
         {
             ErrorMessage = $"Invalid length for card type '{cardType}'";
         }
