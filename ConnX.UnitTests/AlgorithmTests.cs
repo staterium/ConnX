@@ -9,7 +9,7 @@
         [InlineData("378282246310005", true)]
         [InlineData("6011111111111117", true)]
         [InlineData("5105105105105100", true)]
-        [InlineData("5105105105105106", true)]
+        [InlineData("5105105105105106", false)]
         [InlineData("9111111111111111", false)]
         public void LuhnRule_ShouldReturns_ExpectedResult(string cardNumber, bool expectedResult)
         {
