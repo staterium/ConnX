@@ -1,9 +1,21 @@
 using ConnX.Core.CreditCardChecker;
 
+var allowAllOrigins = "_allowAllOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: allowAllOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin();
+        });
+});
 
 var app = builder.Build();
 
@@ -14,6 +26,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(allowAllOrigins);
+
 
 app.MapGet("/checkcard/{cardNumber}", (string cardNumber) =>
 {
