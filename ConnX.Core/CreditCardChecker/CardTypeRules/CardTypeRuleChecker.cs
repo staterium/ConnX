@@ -5,36 +5,36 @@ using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules
 {
-    internal class CardTypeRuleChecker : ICreditCardRule
+    internal class CardTypeRuleChecker(CreditCard creditCard) : ICreditCardRule
     {
-        private readonly List<ICardTypeRule> _rules;
-
-        public CardTypeRuleChecker() 
-        {
-            _rules = 
+        private readonly List<ICardTypeRule> _rules =
             [
-                new AmexRule(),
-                new DiscoverRule(),
-                new MasterCardRule(),
-                new VisaRule()
+                new AmexRule(creditCard),
+                new DiscoverRule(creditCard),
+                new MasterCardRule(creditCard),
+                new VisaRule(creditCard)
             ];
-        }
 
-        public ValidationResult Check(CreditCard creditCard)
+        public GenericValidationResult Check()
         {
-            var result = new ValidationResult
+            var result = new GenericValidationResult
             {
                 IsValid = false,
-                Error = "Unknown Card Type"
+                ErrorMessage = "Unknown Card Type"
             };
 
             foreach (var rule in _rules)
             {
-                if (rule.TypeMatches)
+                var typeCheckResult = rule.Check();
+
+                if(!typeCheckResult.IsValid)
                 {
-                    result = rule.Check(creditCard);
-                    break;
-                }
+                    return new GenericValidationResult
+                    {
+                        IsValid = typeCheckResult.IsValid,
+                        ErrorMessage = typeCheckResult.Error.ErrorMessage
+                    };
+                }                
             }
 
             return result;

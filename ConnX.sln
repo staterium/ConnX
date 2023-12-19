@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnX.Core", "ConnX.Core\ConnX.Core.csproj", "{CA94444B-8E10-4D8D-A09B-A02E4FFCD952}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnX.UnitTests", "ConnX.UnitTests\ConnX.UnitTests.csproj", "{20560D4F-F507-479F-9602-C41241DD783B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CA94444B-8E10-4D8D-A09B-A02E4FFCD952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA94444B-8E10-4D8D-A09B-A02E4FFCD952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA94444B-8E10-4D8D-A09B-A02E4FFCD952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20560D4F-F507-479F-9602-C41241DD783B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20560D4F-F507-479F-9602-C41241DD783B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20560D4F-F507-479F-9602-C41241DD783B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20560D4F-F507-479F-9602-C41241DD783B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

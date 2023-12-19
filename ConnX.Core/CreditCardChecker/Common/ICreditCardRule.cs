@@ -4,6 +4,6 @@ namespace ConnX.Core.CreditCardChecker.Common
 {
     internal interface ICreditCardRule
     {
-        ValidationResult Check(CreditCard creditCard);
+        GenericValidationResult Check();
     }
 }

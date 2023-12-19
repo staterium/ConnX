@@ -1,10 +1,10 @@
 ﻿namespace ConnX.Core.Common
 {
-    public class ValidationResult
+    public class GenericValidationResult
     {
         public bool IsValid { get; set; }
 
-        public string Error { get; set; }
+        public string ErrorMessage { get; set; }
 
     }
 }

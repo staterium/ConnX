@@ -4,6 +4,6 @@ namespace ConnX.Core.CreditCardChecker.AlgorithmicRules.Common
 {
     internal interface IAlgorithmicRule
     {
-        ValidationResult Check(CreditCard creditCard);
+        GenericValidationResult Check();
     }
 }

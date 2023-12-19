@@ -5,30 +5,24 @@ using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker
 {
-    public class CreditCardChecker
+    public class CreditCardChecker(CreditCard creditCard)
     {
-        private readonly List<ICreditCardRule> _rules;
-
-        public CreditCardChecker()
-        {
-            _rules =
+        private readonly List<ICreditCardRule> _rules =
             [
-                new CardTypeRuleChecker(),
-                new AlgorithmicRuleChecker()
+                new CardTypeRuleChecker(creditCard),
+                new AlgorithmicRuleChecker(creditCard)
             ];
-        }
 
-        public ValidationResult Check(CreditCard creditCard)
+        public GenericValidationResult Check()
         {
-            var result = new ValidationResult
+            var result = new GenericValidationResult
             {
-                IsValid = false,
-                Error = "Unknown Card Type"
+                IsValid = true
             };
 
             foreach (var rule in _rules)
             {
-                result = rule.Check(creditCard);
+                result = rule.Check();
                 break;
             }
 

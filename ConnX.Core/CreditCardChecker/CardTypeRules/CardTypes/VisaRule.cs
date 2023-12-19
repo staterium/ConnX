@@ -1,13 +1,18 @@
 ﻿using ConnX.Core.Common;
 using ConnX.Core.CreditCardChecker.CardTypeRules.Common;
+using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules.CardTypes
 {
-    internal class VisaRule : ICardTypeRule
+    public class VisaRule : CreditCardRuleBase, ICardTypeRule
     {
-        public bool TypeMatches => throw new NotImplementedException();
+        public string CardType => "Visa";
 
-        public ValidationResult Check(CreditCard creditCard)
+        public VisaRule(CreditCard creditCard) : base(creditCard)
+        {
+        }
+
+        public CardTypeValidationResult Check()
         {
             throw new NotImplementedException();
         }

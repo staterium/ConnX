@@ -1,11 +1,9 @@
-﻿using ConnX.Core.Common;
-
-namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
+﻿namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
 {
     internal interface ICardTypeRule
     {
-        bool TypeMatches { get; }
+        string CardType { get; }
 
-        ValidationResult Check(CreditCard creditCard);
+        CardTypeValidationResult Check();
     }
 }

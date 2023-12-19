@@ -9,24 +9,24 @@ namespace ConnX.Core.CreditCardChecker.AlgorithmicRules
     {
         private readonly List<IAlgorithmicRule> _rules;
 
-        public AlgorithmicRuleChecker()
+        public AlgorithmicRuleChecker(CreditCard creditCard)
         {
             _rules =
             [
-                new LuhnRule()
+                new LuhnRule(creditCard)
             ];
         }
 
-        public ValidationResult Check(CreditCard creditCard)
+        public GenericValidationResult Check()
         {
-            var result = new ValidationResult
+            var result = new GenericValidationResult
             {
                 IsValid = true
             };
 
             foreach (var rule in _rules)
             {
-                result = rule.Check(creditCard);
+                result = rule.Check();
                 break;
             }
 
