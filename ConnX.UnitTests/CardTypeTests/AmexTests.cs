@@ -1,6 +1,4 @@
-﻿using ConnX.Core.CreditCardChecker.CardTypeRules.Common;
-
-namespace ConnX.UnitTests.CardTypeTests
+﻿namespace ConnX.UnitTests.CardTypeTests
 {
     public class AmexTests
     {
