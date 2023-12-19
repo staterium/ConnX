@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     fetchData() {
-      const apiUrl = `https:/localhost:7244/checkcard/${this.userInput}`; 
+      const apiUrl = `https:/localhost:5220/checkcard/${this.userInput}`; 
       axios.get(apiUrl)
         .then(response => {
           this.apiResponse = response.data;
