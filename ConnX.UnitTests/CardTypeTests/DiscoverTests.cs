@@ -13,7 +13,7 @@
             var result = discoverRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Theory]
@@ -33,7 +33,7 @@
             var result = discoverRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeStartsWithError>();
         }
 
@@ -68,7 +68,7 @@
             var result = discoverRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
 
@@ -83,7 +83,7 @@
             var result = discoverRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeFormatError>();
         }
     }

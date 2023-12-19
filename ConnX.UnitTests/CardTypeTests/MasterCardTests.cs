@@ -13,7 +13,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -27,7 +27,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -41,7 +41,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -55,7 +55,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -69,7 +69,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Theory]
@@ -89,7 +89,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeStartsWithError>();
         }
 
@@ -106,7 +106,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
 
@@ -124,7 +124,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
 
@@ -139,7 +139,7 @@
             var result = masterCardRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeFormatError>();
         }
     }

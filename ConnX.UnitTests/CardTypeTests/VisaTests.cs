@@ -13,7 +13,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -27,7 +27,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -41,7 +41,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Fact]
@@ -55,7 +55,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(true);
+            result.IsValid.ShouldBeTrue();
         }
 
         [Theory]
@@ -75,7 +75,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeStartsWithError>();
         }
 
@@ -92,7 +92,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
 
@@ -110,7 +110,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
 
@@ -125,7 +125,7 @@
             var result = visaRule.Check();
 
             //assert
-            result.IsValid.ShouldBe(false);
+            result.IsValid.ShouldBeFalse();
             result.Error.ShouldBeAssignableTo<CardTypeFormatError>();
         }
     }
