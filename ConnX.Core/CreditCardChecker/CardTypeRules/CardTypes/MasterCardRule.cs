@@ -3,6 +3,9 @@ using ConnX.Core.CreditCardChecker.CardTypeRules.Common;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules.CardTypes
 {
+    /// <summary>
+    /// A validation rule that checks if a credit card is a MasterCard.
+    /// </summary>
     public class MasterCardRule : CardTypeRuleBase, ICardTypeRule
     {
         public MasterCardRule(CreditCard creditCard) : base(

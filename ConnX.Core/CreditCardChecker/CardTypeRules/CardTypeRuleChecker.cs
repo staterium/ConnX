@@ -5,6 +5,11 @@ using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules
 {
+    /// <summary>
+    /// Constructs and uses a list of card type rules to use for validation, which allows for easy extensibility.
+    /// Note that the order of the rules is important, as the first valid result is returned.
+    /// </summary>
+    /// <param name="creditCard"></param>
     internal class CardTypeRuleChecker(CreditCard creditCard) : ICreditCardRule
     {
         private readonly List<ICardTypeRule> _rules =
@@ -15,6 +20,10 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules
                 new VisaRule(creditCard)
             ];
 
+        /// <summary>
+        /// Checks the credit card against the list of rules and returns the first valid result.
+        /// </summary>
+        /// <returns></returns>
         public GenericValidationResult Check()
         {
             var result = new GenericValidationResult

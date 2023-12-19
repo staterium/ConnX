@@ -3,16 +3,30 @@ using ConnX.Core.CreditCardChecker.CardTypeRules.Errors;
 
 namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
 {
+    /// <summary>
+    /// A common base class that all card type rules inherit from.
+    /// </summary>
     public class CardTypeRuleBase
     {
+        /// <summary>
+        /// The name of the card type.
+        /// </summary>
         public string CardType { get; set; }
 
+        /// <summary>
+        /// The credit card to check.
+        /// </summary>
         public CreditCard CreditCard { get; set; }
 
+        /// <summary>
+        /// The valid start numbers for the card type.
+        /// </summary>
         public List<int> ValidStartsWith { get; set; }
 
+        /// <summary>
+        /// The valid lengths for the card type.
+        /// </summary>
         public List<int> ValidLength { get; set; }
-
 
         public CardTypeRuleBase(CreditCard creditCard, string cardType, List<int> validStartsWith, List<int> validLength)
         {
@@ -42,6 +56,12 @@ namespace ConnX.Core.CreditCardChecker.CardTypeRules.Common
             ValidLength = validLength;
         }
 
+        /// <summary>
+        /// Performs the card type checks as determined by the paramaters of the card type.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="CardTypeValidationResult"/> containing the results of the card type checks.
+        /// </returns>
         public CardTypeValidationResult Check()
         {
             if (string.IsNullOrEmpty(CreditCard.Number))

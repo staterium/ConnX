@@ -5,6 +5,9 @@ using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker.AlgorithmicRules
 {
+    /// <summary>
+    /// This class is responsible for checking the credit card number against all the algorithmic rules.
+    /// </summary>
     internal class AlgorithmicRuleChecker : ICreditCardRule
     {
         private readonly List<IAlgorithmicRule> _rules;

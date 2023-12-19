@@ -4,12 +4,11 @@ using ConnX.Core.CreditCardChecker.Common;
 
 namespace ConnX.Core.CreditCardChecker.AlgorithmicRules.Algorithms
 {
-    public class LuhnRule : CreditCardRuleBase, IAlgorithmicRule
+    /// <summary>
+    /// Represents the Luhn algorithm for validating credit card numbers.
+    /// </summary>
+    public class LuhnRule(CreditCard creditCard) : CreditCardRuleBase(creditCard), IAlgorithmicRule
     {
-        public LuhnRule(CreditCard creditCard) : base(creditCard)
-        {
-        }
-
         public GenericValidationResult Check()
         {
             var numbers = CreditCard.Number.ToCharArray().Select(s => s - '0').ToList();
