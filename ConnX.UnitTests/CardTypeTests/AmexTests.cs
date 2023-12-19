@@ -85,5 +85,20 @@
             result.IsValid.ShouldBe(false);
             result.Error.ShouldBeAssignableTo<CardTypeLengthError>();
         }
+
+        [Fact]
+        public void CardNumber_ThatIsntNumberis_IsInvalid()
+        {
+            //arrange
+            var creditCard = new CreditCard("adfadsffadfadsf");
+            var amexRule = new AmexRule(creditCard);
+
+            //act
+            var result = amexRule.Check();
+
+            //assert
+            result.IsValid.ShouldBe(false);
+            result.Error.ShouldBeAssignableTo<CardTypeFormatError>();
+        }
     }
 }
