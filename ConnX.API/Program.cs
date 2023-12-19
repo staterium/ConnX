@@ -26,3 +26,5 @@ app.MapGet("/checkcard/{cardNumber}", (string cardNumber) =>
 .WithOpenApi();
 
 app.Run();
+
+public partial class Program { }
